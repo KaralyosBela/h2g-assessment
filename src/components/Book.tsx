@@ -5,36 +5,52 @@ import { useDispatch } from "react-redux";
 import { AppDispatch } from "../app/store";
 import { editBook } from "../features/bookSlice";
 import {RiEditCircleFill} from "react-icons/ri"
+import { useState } from "react";
 
 interface Props {
   book: IBook;
+  loading: (loadStatus: boolean) => void;
 }
 
-export const Book: React.FC<Props> = ({ book }) => {
+export const Book: React.FC<Props> = ({ book, loading }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch<AppDispatch>();
+
+  const [error, setError] = useState<boolean>(false);
 
   const navigateToEditBook = (id: number) => {
     navigate(`/books/edit/${id}`);
   };
 
-  const changeBookStatus = (status: string) => {
+  const changeBookStatus = async (status: string) => {
     if (status === "reading" && book.reading === false) {
-      dispatch(
-        editBook({
-          ...book,
-          reading: !book.reading,
-          read: !book.read,
-        })
-      );
+      loading(true);
+      try {
+        await dispatch(
+          editBook({
+            ...book,
+            reading: !book.reading,
+            read: !book.read,
+          })
+        ).unwrap();
+      } catch (erro: any) {
+        setError(error);
+      }
+      loading(false);
     } else if (status === "read" && book.read === false) {
-      dispatch(
-        editBook({
-          ...book,
-          reading: !book.reading,
-          read: !book.read,
-        })
-      );
+      loading(true);
+      try {
+        await dispatch(
+          editBook({
+            ...book,
+            reading: !book.reading,
+            read: !book.read,
+          })
+        ).unwrap();
+      } catch (error: any) {
+        setError(error);
+      }
+      loading(false);
     }
   };
 
@@ -54,6 +70,7 @@ export const Book: React.FC<Props> = ({ book }) => {
           onClick={() => changeBookStatus("read")}>Read
         </button>
       </div>
+      {error && <div className={classes.error}>{error}</div>}
     </div>
   );
 };

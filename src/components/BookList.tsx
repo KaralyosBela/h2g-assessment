@@ -5,9 +5,10 @@ import classes from "./BookList.module.css";
 
 interface Props {
   books: IBook[];
+  loading: (loadStatus: boolean) => void;
 }
 
-export const BookList: React.FC<Props> = ({ books }) => {
+export const BookList: React.FC<Props> = ({ books, loading }) => {
   
   const error = useAppSelector((state) => state.books.errors);
 
@@ -15,7 +16,7 @@ export const BookList: React.FC<Props> = ({ books }) => {
     <div className={classes.bookList}>
       {books.length > 0 &&
         books.map((book) => {
-          return <Book book={book} key={book.id} />;
+          return <Book book={book} key={book.id} loading={loading} />;
         })}
       {error.fetchError && (
         <div className={classes.error}>{error.errMessage}</div>

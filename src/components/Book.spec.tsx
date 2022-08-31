@@ -1,9 +1,6 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import { Book } from "./Book";
 
-// const navigate = useNavigate();
-//   const dispatch = useDispatch<AppDispatch>();
-
 const mockDispatch = jest.fn();
 const mockEditBook = jest.fn();
 const mockUseDispatch = jest.fn(() => mockDispatch);
@@ -23,6 +20,7 @@ jest
 
 describe("book", () => {
   it("should render component when is read", () => {
+    const loading = () => {};
     const book = {
       id: 1,
       title: "testTitle",
@@ -31,11 +29,12 @@ describe("book", () => {
       reading: false,
       read: true,
     };
-    const { container } = render(<Book book={book} />);
+    const { container } = render(<Book book={book} loading={loading} />);
     expect(container).toMatchSnapshot();
   });
 
   it("should render component when is reading", () => {
+    const loading = () => {};
     const book = {
       id: 1,
       title: "testTitle",
@@ -44,11 +43,12 @@ describe("book", () => {
       reading: true,
       read: false,
     };
-    const { container } = render(<Book book={book} />);
+    const { container } = render(<Book book={book} loading={loading}/>);
     expect(container).toMatchSnapshot();
   });
 
   it("should render component when edit is clicked", () => {
+    const loading = () => {};
     const book = {
       id: 1,
       title: "testTitle",
@@ -57,13 +57,14 @@ describe("book", () => {
       reading: true,
       read: false,
     };
-    const { container } = render(<Book book={book} />);
+    const { container } = render(<Book book={book} loading={loading}/>);
     fireEvent.click(screen.getByTestId("edit-button"));
     expect(mockUseNavigate.mock.calls).toEqual([["/books/edit/1"]]);
     expect(container).toMatchSnapshot();
   });
 
   it("should render component when reading is clicked", () => {
+    const loading = () => {};
     const book = {
       id: 1,
       title: "testTitle",
@@ -73,7 +74,7 @@ describe("book", () => {
       read: true,
     };
     mockEditBook.mockReturnValue("mockEditBook");
-    const { container } = render(<Book book={book} />);
+    const { container } = render(<Book book={book} loading={loading}/>);
     fireEvent.click(screen.getByTestId("reading-button"));
     expect(mockUseDispatch.mock.calls).toEqual([["mockEditBook"]]);
     expect(mockEditBook.mock.calls).toEqual([
@@ -94,6 +95,7 @@ describe("book", () => {
   });
 
   it("should render component when read is clicked", () => {
+    const loading = () => {};
     const book = {
       id: 1,
       title: "testTitle",
@@ -103,7 +105,7 @@ describe("book", () => {
       read: false,
     };
     mockEditBook.mockReturnValue("mockEditBook");
-    const { container } = render(<Book book={book} />);
+    const { container } = render(<Book book={book} loading={loading}/>);
     fireEvent.click(screen.getByTestId("read-button"));
     expect(mockUseDispatch.mock.calls).toEqual([["mockEditBook"]]);
     expect(mockEditBook.mock.calls).toEqual([

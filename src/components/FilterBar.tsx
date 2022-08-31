@@ -20,7 +20,12 @@ export const FilterBar: React.FC = () => {
   const applyFilter = (filter: string, activeFilter: number) => {
     setActiveTab(activeFilter);
     dispatch(setFilter(filter));
-  }
+  };
+
+  useEffect(() => {
+    setActiveTab(4);
+    dispatch(setFilter(""));
+  }, []);
 
   return (
     <>

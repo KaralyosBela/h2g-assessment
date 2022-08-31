@@ -112,13 +112,10 @@ export const bookSlice = createSlice({
           (book: IBook) => book.id === action.payload.id
         );
         state.books[index] = action.payload;
-        state.loading = false;
       })
       .addCase(editBook.pending, (state) => {
-        state.loading = true;
       })
       .addCase(editBook.rejected, (state, action: PayloadAction<any>) => {
-        state.loading = false;
         state.errors.fetchError = true;
         state.errors.errMessage = action.payload;
       });

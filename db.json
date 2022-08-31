@@ -5,8 +5,8 @@
       "title": "Harry Potter and the Philosopher's Stone",
       "author": "J. K. Rowling",
       "description": "Harry Potter and the Philosopher's Stone is a fantasy novel written by British author J. K. Rowling. The first novel in the Harry Potter series and Rowling's debut novel, it follows Harry Potter, a young wizard who discovers his magical heritage on his eleventh birthday,",
-      "reading": false,
-      "read": true
+      "reading": true,
+      "read": false
     },
     {
       "id": 2,
@@ -29,8 +29,16 @@
       "title": "sdfs",
       "author": "sdf",
       "description": "",
-      "reading": false,
-      "read": true
+      "reading": true,
+      "read": false
+    },
+    {
+      "id": 193,
+      "title": "ghj",
+      "author": "hj",
+      "description": "",
+      "reading": true,
+      "read": false
     }
   ]
 }
