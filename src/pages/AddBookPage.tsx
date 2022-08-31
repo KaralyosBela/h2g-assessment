@@ -14,7 +14,7 @@ export const AddBookPage: React.FC = () => {
   const [title, setTitle] = useState<string>("");
   const [author, setAuthor] = useState<string>("");
   const [description, setDescription] = useState<string>("");
-  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [errorMessage, setErrorMessage] = useState<string>("");
   const [disabled, setDisabled] = useState<boolean>(true);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<boolean>(false);
@@ -50,7 +50,7 @@ export const AddBookPage: React.FC = () => {
       setErrorMessage("Author must be filled!");
       return true;
     }
-    setErrorMessage(null);
+    setErrorMessage("");
     return false;
   };
 
@@ -104,7 +104,7 @@ export const AddBookPage: React.FC = () => {
           <div className={classes.actions}>
             <button
               className={
-                errorMessage
+                disabled
                   ? classes.submitBtnDisabled
                   : classes.submitBtnEnabled
               }

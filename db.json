@@ -13,16 +13,24 @@
       "title": "Foundation",
       "author": "Isaac Asimov",
       "description": "",
-      "reading": false,
-      "read": true
+      "reading": true,
+      "read": false
     },
     {
       "id": 721,
       "title": "sdfdfgdfgfdsf",
       "author": "fdfg",
       "description": "",
-      "reading": true,
-      "read": false
+      "reading": false,
+      "read": true
+    },
+    {
+      "id": 968,
+      "title": "sdfs",
+      "author": "sdf",
+      "description": "",
+      "reading": false,
+      "read": true
     }
   ]
 }
