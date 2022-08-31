@@ -1,0 +1,44 @@
+.filterBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 10px 0px;
+}
+
+.filterBar .active {
+  background-color: rgb(118, 205, 216);
+  color: white;
+}
+
+.filterBar button {
+  font-weight: 500;
+  cursor: pointer;
+  padding: 6px 12px;
+  background-color: white;
+  border: none;
+  margin: 0px 2px;
+  border-radius: 6px;
+  box-shadow: rgba(149, 157, 165, 0.3) 0px 8px 24px;
+}
+
+.filterBar .newButton {
+  color: white;
+  background-color: rgb(118, 205, 216);
+}
+
+.filterBar .filterRight {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.filterBar .filterRight .filterTitle {
+  margin-right: 10px;
+  font-weight: 700;
+}
+
+hr {
+  height: 1px;
+  background-color: #222222;
+  border: none;
+}

@@ -1,0 +1,156 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`book should render component when edit is clicked 1`] = `
+<div>
+  <div
+    class="bookElement"
+  >
+    testTitle
+    <div
+      class="interaction"
+    >
+      <button
+        data-testid="edit-button"
+      >
+        edit
+      </button>
+      <button
+        class="active"
+        data-testid="reading-button"
+      >
+        reading
+      </button>
+      <button
+        class=""
+        data-testid="read-button"
+      >
+        read
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`book should render component when is read 1`] = `
+<div>
+  <div
+    class="bookElement"
+  >
+    testTitle
+    <div
+      class="interaction"
+    >
+      <button
+        data-testid="edit-button"
+      >
+        edit
+      </button>
+      <button
+        class=""
+        data-testid="reading-button"
+      >
+        reading
+      </button>
+      <button
+        class="active"
+        data-testid="read-button"
+      >
+        read
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`book should render component when is reading 1`] = `
+<div>
+  <div
+    class="bookElement"
+  >
+    testTitle
+    <div
+      class="interaction"
+    >
+      <button
+        data-testid="edit-button"
+      >
+        edit
+      </button>
+      <button
+        class="active"
+        data-testid="reading-button"
+      >
+        reading
+      </button>
+      <button
+        class=""
+        data-testid="read-button"
+      >
+        read
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`book should render component when read is clicked 1`] = `
+<div>
+  <div
+    class="bookElement"
+  >
+    testTitle
+    <div
+      class="interaction"
+    >
+      <button
+        data-testid="edit-button"
+      >
+        edit
+      </button>
+      <button
+        class="active"
+        data-testid="reading-button"
+      >
+        reading
+      </button>
+      <button
+        class=""
+        data-testid="read-button"
+      >
+        read
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`book should render component when reading is clicked 1`] = `
+<div>
+  <div
+    class="bookElement"
+  >
+    testTitle
+    <div
+      class="interaction"
+    >
+      <button
+        data-testid="edit-button"
+      >
+        edit
+      </button>
+      <button
+        class=""
+        data-testid="reading-button"
+      >
+        reading
+      </button>
+      <button
+        class="active"
+        data-testid="read-button"
+      >
+        read
+      </button>
+    </div>
+  </div>
+</div>
+`;

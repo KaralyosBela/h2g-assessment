@@ -1,0 +1,11 @@
+.error_page {
+    color: #D35D47;
+    text-align: center;
+}
+
+.error_page p {
+    color: #222222;
+    padding: 10px 0px;
+    cursor: pointer;
+}
+

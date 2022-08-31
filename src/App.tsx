@@ -1,58 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import { BooksPage } from "./pages/BooksPage";
+import { AddBookPage } from "./pages/AddBookPage";
+import { EditBookPage } from "./pages/EditBookPage";
+import { ErrorPage } from "./pages/ErrorPage";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { getBooks } from "./features/bookSlice";
+import { AppDispatch } from "./app/store";
+import { useBooks } from "./features/book.hook";
 
-function App() {
+export const App: React.FC = () => {
+  const bookList = useBooks();
+  const dispatch = useDispatch<AppDispatch>();
+
+  useEffect(() => {
+    dispatch(getBooks());
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
+    <div>
+      <Routes>
+        <Route path="/" element={<BooksPage books={bookList} />} />
+        <Route path="/books" element={<BooksPage books={bookList} />} />
+        <Route path="/books/new" element={<AddBookPage />} />
+        <Route path="/books/edit/:id" element={<EditBookPage />} />
+        <Route path="/*" element={<ErrorPage />} />
+      </Routes>
     </div>
   );
-}
-
-export default App;
+};

@@ -1,0 +1,78 @@
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form .actions {
+  display: flex;
+  flex-direction: row;
+  margin: 12px 0px;
+}
+
+.form .actions button {
+  font-weight: 500;
+  cursor: pointer;
+  padding: 6px 30px;
+  border: none;
+  border-radius: 6px;
+  box-shadow: rgba(149, 157, 165, 0.3) 0px 8px 24px;
+}
+
+.form input,
+textarea {
+  border-radius: 6px;
+  text-align: left;
+  padding-left: 6px;
+  height: 22px;
+  border: 2px solid #222222;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.form input:focus,
+textarea:focus {
+  outline: none;
+}
+
+.form label {
+  font-weight: 500;
+}
+
+.form textarea {
+  height: 60px;
+  border-color: #76cdd8;
+}
+
+.form .actions button:first-child {
+  margin-right: 12px;
+}
+
+.form .valid {
+  border-color: #76cdd8;
+}
+
+.form .invalid {
+  border-color: #d35d47;
+}
+
+.form p {
+  color: #d35d47;
+}
+
+h1 {
+  margin-bottom: 10px;
+}
+
+.form .submitBtnDisabled {
+  background-color: white;
+}
+
+.form .submitBtnEnabled {
+  background-color: rgb(206, 219, 86);
+  color: white;
+}
+
+.form .cancelBtn {
+  background-color: #d35d47;
+  color: white;
+}
